@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, textarea, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        .coding {
+            background-color: #e9ecef;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>C++ Programming Test</h1>
+    <p>Please answer the following multiple-choice and coding questions. Fill in your answers and submit the test when finished.</p>
+
+    <form id="cppTest" action="submit.php" method="POST">
+        
+        <!-- Objective Question 1 -->
+        <div class="question">
+            <label>1. What is the output of the following code?
+            <pre>
+#include &lt;iostream&gt;
+int main() {
+    std::cout &lt;&lt; "Hello, World!";
+    return 0;
+}
+            </pre>
+            </label>
+            <select name="q1" required>
+                <option value="">Select an answer</option>
+                <option value="A">Hello, World!</option>
+                <option value="B">Hello World!</option>
+                <option value="C">No output</option>
+                <option value="D">Compilation error</option>
+            </select>
+        </div>
+
+        <!-- Objective Question 2 -->
+        <div class="question">
+            <label>2. Which of the following is the correct way to declare a pointer in C++?</label>
+            <select name="q2" required>
+                <option value="">Select an answer</option>
+                <option value="A">int* ptr;</option>
+                <option value="B">ptr int*;</option>
+                <option value="C">int ptr*;</option>
+                <option value="D">pointer int;</option>
+            </select>
+        </div>
+
+        <!-- Objective Question 3 -->
+        <div class="question">
+            <label>3. Which keyword is used to inherit a class in C++?</label>
+            <select name="q3" required>
+                <option value="">Select an answer</option>
+                <option value="A">inherits</option>
+                <option value="B">extends</option>
+                <option value="C">public</option>
+                <option value="D">public base</option>
+            </select>
+        </div>
+
+        <!-- Coding Question -->
+        <div class="question coding">
+            <label for="coding">4. Write a C++ function to calculate the factorial of a number:</label>
+            <textarea id="coding" name="coding" rows="6" placeholder="Write your code here..." required></textarea>
+        </div>
+
+        <input type="submit" value="Submit Test">
+    </form>
+
+</body>
+</html>

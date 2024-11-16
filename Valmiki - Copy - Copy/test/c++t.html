@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Test Preparation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-image: url('c++test1.jpg'); /* image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        h1 {
+            background-color: rgba(255, 51, 0, 0.8);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            font-size: 2.5em;
+        }
+
+        .details {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            font-size: 1.5em;
+            color: #ffcc00; /* Countdown color */
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .details p, .details ul {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .start-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .details p, .details ul {
+                font-size: 1em;
+            }
+
+            .start-button {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+
+            .countdown {
+                font-size: 1.2em; /* Responsive font size */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the C++ Programming Test</h1>
+    <div class="details">
+        <p>Before you start, please make sure you are prepared. This test will assess your understanding of C++ programming concepts, including:</p>
+        <ul>
+            <li>Basic syntax and output</li>
+            <li>Pointers and memory management</li>
+            <li>Inheritance and OOP principles</li>
+            <li>Writing functional code</li>
+        </ul>
+        <p>Take your time, read each question carefully, and do your best. Are you ready to begin?</p>
+        
+        <div class="countdown" id="countdown" style="display: none;">Starting in: 10</div>
+    </div>
+
+    <button class="start-button" id="startButton">Yes, I'm Ready!</button>
+
+    <script>
+        // Countdown timer
+        let countdownTime;
+        let countdownInterval;
+
+        const countdownDisplay = document.getElementById('countdown');
+        const startButton = document.getElementById('startButton');
+
+        // Function to start the countdown
+        function startCountdown() {
+            countdownTime = 10; // countdown time in seconds
+            countdownDisplay.style.display = 'block'; // Show the countdown
+            countdownDisplay.textContent = `Starting in: ${countdownTime}`;
+
+            countdownInterval = setInterval(() => {
+                countdownTime--;
+                countdownDisplay.textContent = `Starting in: ${countdownTime}`;
+                if (countdownTime <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownDisplay.textContent = 'Time is up!'; // Change message when time is up
+                    // Optionally redirect to the test page or do something else here
+                    window.location.href = "test.html"; // Redirect after countdown
+                }
+            }, 1000);
+        }
+
+        // Add event listener to the start button
+        startButton.addEventListener('click', () => {
+            startButton.style.display = 'none'; // Hide the start button
+            startCountdown(); // Start the countdown
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #283593;
+            padding: 15px 30px;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            position: relative;
+            margin-right: 20px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .menu ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .dropdown-list {
+            display: none; /* Initially hide dropdowns */
+            position: absolute;
+            background: #424242;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        .dropdown-list.show {
+            display: block; /* Show dropdown when 'show' class is added */
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+            width: 200px;
+        }
+
+        .search button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #f44336;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search button:hover {
+            background: #d32f2f;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .content h1 {
+            font-size: 34px;
+            color: #333;
+        }
+
+        .content h1 span {
+            color: #f44336;
+        }
+
+        .par {
+            margin: 20px 0;
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .form {
+            margin-top: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 300px; /* Set width for the form */
+        }
+
+        .form input {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: calc(100% - 20px); /* Full width accounting for padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form .btnn {
+            padding: 10px;
+            background: #283593;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .form .btnn:hover {
+            background: #1e88e5;
+        }
+
+        .link {
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .icons a {
+            margin-right: 15px;
+            color: #283593;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .icons a:hover {
+            color: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Valmiki</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+
+                    <li>
+                        <a href="#" id="compilerButton">COMPILER <span class="badge">^</span></a>
+                        <ul class="dropdown-list" id="compilerlist">
+                            <li><a href="https://www.programiz.com/c-programming/online-compiler/">C</a></li>
+                            <li><a href="https://www.programiz.com/cpp-programming/online-compiler/" target="_blank">C++</a></li>
+                            <li><a href="https://www.programiz.com/java-programming/online-compiler/">Java</a></li>
+                            <li><a href="https://www.programiz.com/python-programming/online-compiler/">Python</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" id="certificateButton">CERTIFICATE <span class="badge">^</span></a>
+                        <ul class="dropdown-list" id="certificateList">
+                            <li><a href="#">C</a></li>
+                            <li><a href="test/c++t.html">C++</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Python</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#" id="languageToggleButton">LANGUAGE <span class="badge">^</span></a>
+                        <ul class="dropdown-list" id="languageList">
+                            <li><a href="#">C</a></li>
+                            <li><a href="c++.html" target="_blank">C++</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Python</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" placeholder="Type To Search">
+                <button class="btn">Search</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Upgrade your Self & <br><span>Skills</span></h1>
+            <p class="par">Programming is not just about writing code; it’s about solving 
+                problems and thinking creatively. Every line of code is a step towards transforming ideas 
+                into reality, and great code reflects clarity of thought and elegance in design.</p>
+
+            <div class="form">
+                <h2>Login Here</h2>
+                <input type="email" placeholder="Enter Email Here">
+                <input type="password" placeholder="Enter Password Here">
+                <button class="btnn"><a href="#" style="color: white; text-decoration: none;">Login</a></button>
+
+                <p class="link">Don't have an account?<br>
+                <a href="loginpage/registration.html">Sign up</a> here</p>
+                <p class="liw">Log in with</p>
+
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script>
+        // Function to close all dropdowns
+        function closeAllDropdowns() {
+            var dropdowns = document.querySelectorAll('.dropdown-list');
+            dropdowns.forEach(function(dropdown) {
+                dropdown.classList.remove('show'); // Remove 'show' class to close dropdowns
+            });
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('compilerButton').addEventListener('click', function () {
+            closeAllDropdowns(); // Close all dropdowns first
+            var compilerList = document.getElementById('compilerlist');
+            compilerList.classList.toggle('show'); // Toggle the 'show' class for this dropdown
+        });
+
+        document.getElementById('certificateButton').addEventListener('click', function () {
+            closeAllDropdowns(); // Close all dropdowns first
+            var certificateList = document.getElementById('certificateList');
+            certificateList.classList.toggle('show'); // Toggle the 'show' class for this dropdown
+        });
+
+        document.getElementById('languageToggleButton').addEventListener('click', function () {
+            closeAllDropdowns(); // Close all dropdowns first
+            var languageList = document.getElementById('languageList');
+            languageList.classList.toggle('show'); // Toggle the 'show' class for this dropdown
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            var isDropdown = event.target.matches('.dropdown-list') || event.target.closest('.menu ul li');
+            if (!isDropdown) {
+                closeAllDropdowns();
+            }
+        });
+    </script>
+</body>
+</html>
